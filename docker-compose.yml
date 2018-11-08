@@ -1,0 +1,24 @@
+version: '3.3'
+
+services:
+  php:
+    container_name: lamp533x-php
+    build: ./
+    ports:
+      - 80:80
+    depends_on:
+      - db
+    volumes:
+     - ./code:/var/www/html:cached
+     - ./php/php.ini:/etc/php5/apache2/php.ini
+  
+  db:
+    container_name: lamp533x-db
+    image: eromero/mysql5.1.73
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+     - 3306:3306
+    volumes:
+     - ./db-data:/var/lib/mysql
+     - ./mysql/my.cnf:/var/lib/mysql/my.cnf
