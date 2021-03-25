@@ -1,4 +1,4 @@
-# lamp5.3.29-xdebug for dokcer-compose
+# lamp5.3.29-xdebug for docker-compose
 
 ## Overview
 
